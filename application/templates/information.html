@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% block title %}TopTracks{% endblock %} {% block head
+%} {{ super() }} {% endblock %} {% block content %}
+<div class="py-5">
+	<div class="container">
+		<div class="row page-info">
+			<div class="col-12 col-lg-4">
+				<h1>Privacy</h1>
+			</div>
+			<div class="col-12 col-lg-8">
+				<p>
+					In order to access features within the Spotify SDK, this application
+					needs your permission to enable user scopes (such as
+					'playlist-modify-public' which allows us to create playlists and add
+					tracks on your behalf). We do not store or distribute any of your
+					information. Permission can be revoked through
+					<a
+						href="https://www.spotify.com/us/account/apps/"
+						class="hyperlink-black"
+						>this page</a
+					>.
+				</p>
+			</div>
+		</div>
+
+		<div class="row page-info">
+			<div class="col-12 col-lg-4">
+				<h1>Playlist RecSys</h1>
+			</div>
+			<div class="col-12 col-lg-8">
+				<p>
+					Get your recommendation without revealing your privacy! Our "Playlist
+					Tuning" feature only looks at the playlist link you provide. From
+					there, we conduct content-based filtering to find similarities between
+					tracks in your playlist and other songs in our database to give you
+					recommendations on tracks that you might like. You can also choose the
+					number of tracks that you would like to receive. Note that no user
+					data - including user profile, regions, etc. are collected for THIS
+					feature.
+				</p>
+			</div>
+		</div>
+
+		<div class="row page-info">
+			<div class="col-12 col-lg-4">
+				<h1>Custom Tuning</h1>
+			</div>
+			<div class="col-12 col-lg-8">
+				<p>
+					This site provides you with several features to find new music and
+					create playlist in an easy fashion. First, enter up to 5 song names or
+					artists that you want the playlist to reflect. Second, set the
+					tuneable attributes that you want to highlight in your playlist. This
+					includes attributes such as energy, which measures the intensity of
+					music, and valence, which describes the mood of the track.
+					Non-selected attributes will have no effect on the generated playlist.
+					Note that user authentication OAuth2 from Spotify API is required for
+					THIS feature.
+				</p>
+			</div>
+		</div>
+
+		<div class="row page-info">
+			<div class="col-12 col-lg-4">
+				<h1>Export</h1>
+			</div>
+			<div class="col-12 col-lg-8">
+				<p>
+					Export your data to TIDAL to share with your friends! This feature
+					allows you to export your Spotify playlist to TIDAL. You can also
+					choose the number of tracks that you would like to export. Note that
+					user authentication OAuth2 from Spotify API and TIDAL are required for
+					THIS feature.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %} {% block footer %} {% endblock %}

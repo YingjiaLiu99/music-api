@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link href="//code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+</link>
+
+<script src="{{ url_for('static', filename='js/create.js') }}"></script>
+<script src="{{ url_for('static', filename='js/export.js') }}"></script>
+
+<script>var bootstrapTooltip = jQuery.fn.tooltip;</script>
+<!-- Naming conflict for tooltip with Bootstrap and JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>jQuery.fn.tooltip = bootstrapTooltip;</script> <!-- Naming conflict for tooltip with Bootstrap and JQuery -->
+
+{% endblock %}
+
+{% block content %}
+
+<div class="py-5">
+  <div class="container">
+    <div class="row page-info">
+      <div class="col-12 col-lg-7">
+        <div class="container">
+          {% block about %}
+          <div class="input_field">
+            <h1>Playlist Recommender</h1>
+            <p>The Playlist feature will automatically generate track recommendations for you with just an input of
+              Spotify Playlist.
+              You can find the playlist link by following instructions:
+              <a href="https://wordpress.com/support/audio/spotify/" target="_blank" style="color:white">
+                here.
+              </a>
+            </p>
+            <p>Once the recommended results are generated, you can click on any of the songs and it will redirect you
+              back to
+              your Spotify account to play the recommended track. Additionally, you can also export the generated tracks
+              to Tidal by clicking the "Export to Tidal" button on
+              the right side once the recommended results are generated.</p>
+            <p> Please input your Spotify Playlist Link below and choose the number of songs you want to be recommended:</p>
+            <div class="break" style="margin: 10px;"></div>
+            <div class="ml-container">
+              <form action="{{ url_for('recommend') }}" id="form1" method="POST">
+                <input class="input1" type="text" name="URL" style="padding: 5px; width: 80%; margin-bottom: 20px;"  />
+                <div class="break"></div>
+
+                <div class="break"></div>
+                <label for="number-of-recs" style="font-size: 1.4rem;">Choose Number of Songs Recommended:</label>
+                <select name="number-of-recs" id="number-of-recs" form="form1">
+                  <option value="5" selected>5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+                <div class="break"></div>
+                <div style="padding-right:80px;">
+                  <button class="button1 btn-info btn-block form-button" form="form1" type="submit" data-dismiss="modal"
+                    style="color: black; border: none; outline: none; margin-top: 30px;">
+                    Get recommendations
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+          {% endblock about %}
+        </div>
+
+      </div>
+      <div class="col-12 col-lg-5">
+        <div class="py-5">
+          <div class="container">
+            <h3>Results Will Show Here</h3>
+            <p>For exporting talify music recommendations into Tidal, you can click on the "Export to Tidal" button
+              below which will open up a new window for user sign in.
+              Enter your user login credentials on Tidal's website to finish your authentication. Once it is done, you
+              can close the authentication window as prompted.
+            </p>
+            <button id="exportToTidal" class="button1 btn-info btn-block form-button"
+              style="color: black; border: none; outline: none;" data-login-url="{{ login_url }}">
+              Export to Tidal
+            </button>
+            <div class="row " style="padding-left: 15px;">
+              <!-- Iterate over the songs variable -->
+              {% for song in songs %}
+              <div class="row mb-2"> <!-- Row for each song -->
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-center py-2"> <!-- Reduced vertical padding for a thinner card -->
+                      <h6 class="card-title mb-0 card-center" style="color: black; padding: 8px;">{{ song[0] }}</h6>
+                      <a href="{{ song[1] }}" target="_blank" class="stretched-link"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

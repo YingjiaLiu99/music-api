@@ -1,0 +1,13 @@
+test_recommend_with_invalid_playlist (__main__.TestApiRecommend) ... ok
+test_recommend_with_valid_playlist (__main__.TestApiRecommend) ... ok
+test_recommend_without_playlist (__main__.TestApiRecommend) ... ok
+test_batch_recommend_with_some_invalid_urls (__main__.TestBatchApiRecommend) ... ok
+test_batch_recommend_with_specified_number_of_recs (__main__.TestBatchApiRecommend) ... ok
+test_batch_recommend_with_valid_urls (__main__.TestBatchApiRecommend) ... ok
+test_batch_recommend_without_urls (__main__.TestBatchApiRecommend) ... ok
+test_create_playlist_without_token (__main__.TestApiCreatePlaylist) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.875s
+
+OK

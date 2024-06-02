@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block head %}
+{{ super() }} {% endblock %} {% block content %}
+
+<main role="main">
+	<section class="jumbotron text-center">
+		<div class="container site-info">
+			<h1>Customize and Export Music</h1>
+			<br />
+			<h3>
+				Create custom playlists with just a song/artist or by a Spotify playlist
+				ID! You can also export it to your TIDAL platform.
+			</h3>
+		</div>
+	</section>
+
+	<div class="py-5 bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="card mb-4 shadow-sm">
+						<a class="" href="/playlist">
+							<svg
+								class="card-center card-img-top"
+								width="100%"
+								height="225"
+								preserveAspectRatio="xMidYMid slice"
+								focusable="false"
+								role="img"
+								aria-label="Placeholder: By PlayList"
+							>
+								<defs>
+									<linearGradient id="gradient1" gradientTransform="rotate(80)">
+										<stop
+											offset="23%"
+											style="stop-color: rgba(61, 60, 60); stop-opacity: 1"
+										/>
+										<stop
+											offset="45%"
+											style="stop-color: rgba(124, 120, 124); stop-opacity: 1"
+										/>
+										<stop
+											offset="95%"
+											style="stop-color: rgb(55, 57, 60); stop-opacity: 1"
+										/>
+									</linearGradient>
+								</defs>
+								<title>Discover</title>
+								<rect width="100%" height="100%" fill="#000" />
+								<text
+									x="50%"
+									y="50%"
+									fill="#fff"
+									font-size="2em"
+									pointer-events="none"
+								>
+									PLAYLIST RECSYS
+								</text>
+							</svg>
+						</a>
+						<div class="card-body">
+							<p class="card-text">
+								Discover our RS that tunes for your music taste by providing a
+								Spotify Music playlist.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="card mb-4 shadow-sm">
+						<a class="" href="/create">
+							<svg
+								class="card-center card-img-top"
+								width="100%"
+								height="225"
+								preserveAspectRatio="xMidYMid slice"
+								focusable="false"
+								role="img"
+								aria-label="Placeholder: Top Tracks"
+							>
+								<title>Discover</title>
+								<rect width="100%" height="100%" fill="#000" />
+								<text
+									x="50%"
+									y="50%"
+									fill="#fff"
+									font-size="2em"
+									pointer-events="none"
+								>
+									CUSTOM TUNING
+								</text>
+							</svg>
+						</a>
+						<div class="card-body">
+							<p class="card-text">
+								Enter several track names or artists and select tuneable
+								attributes to create a playlist of similar music.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock %} {% block footer %} {% endblock %}
+</main>

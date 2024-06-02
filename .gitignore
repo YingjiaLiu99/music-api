@@ -1,0 +1,5 @@
+.env
+launch.json
+.DS_Store
+.cache
+tidal-oauth.json
